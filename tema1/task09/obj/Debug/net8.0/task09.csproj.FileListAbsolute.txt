@@ -1,0 +1,14 @@
+/Users/romanpetrov/Projects/Tema1/task09/bin/Debug/net8.0/task09
+/Users/romanpetrov/Projects/Tema1/task09/bin/Debug/net8.0/task09.deps.json
+/Users/romanpetrov/Projects/Tema1/task09/bin/Debug/net8.0/task09.runtimeconfig.json
+/Users/romanpetrov/Projects/Tema1/task09/bin/Debug/net8.0/task09.dll
+/Users/romanpetrov/Projects/Tema1/task09/bin/Debug/net8.0/task09.pdb
+/Users/romanpetrov/Projects/Tema1/task09/obj/Debug/net8.0/task09.GeneratedMSBuildEditorConfig.editorconfig
+/Users/romanpetrov/Projects/Tema1/task09/obj/Debug/net8.0/task09.AssemblyInfoInputs.cache
+/Users/romanpetrov/Projects/Tema1/task09/obj/Debug/net8.0/task09.AssemblyInfo.cs
+/Users/romanpetrov/Projects/Tema1/task09/obj/Debug/net8.0/task09.csproj.CoreCompileInputs.cache
+/Users/romanpetrov/Projects/Tema1/task09/obj/Debug/net8.0/task09.dll
+/Users/romanpetrov/Projects/Tema1/task09/obj/Debug/net8.0/refint/task09.dll
+/Users/romanpetrov/Projects/Tema1/task09/obj/Debug/net8.0/task09.pdb
+/Users/romanpetrov/Projects/Tema1/task09/obj/Debug/net8.0/task09.genruntimeconfig.cache
+/Users/romanpetrov/Projects/Tema1/task09/obj/Debug/net8.0/ref/task09.dll
