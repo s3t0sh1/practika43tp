@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/romanpetrov/Projects/tema10/task01/task01.csproj",
+      "projectUniqueName": "/Users/romanpetrov/Desktop/praktika43/tema10/task01/task01.csproj",
       "projectName": "task01",
-      "projectPath": "/Users/romanpetrov/Projects/tema10/task01/task01.csproj",
+      "projectPath": "/Users/romanpetrov/Desktop/praktika43/tema10/task01/task01.csproj",
       "packagesPath": "/Users/romanpetrov/.nuget/packages/",
-      "outputPath": "/Users/romanpetrov/Projects/tema10/task01/obj/",
+      "outputPath": "/Users/romanpetrov/Desktop/praktika43/tema10/task01/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/romanpetrov/.nuget/NuGet/NuGet.Config"
