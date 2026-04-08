@@ -1,0 +1,115 @@
+﻿<Window x:Class="ShopOrdersWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление заказами"
+        Height="450"
+        Width="800"
+        Closing="Window_Closing">
+    
+
+    <!-- Горячие клавиши -->
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Control"
+                    Command="{Binding AddOrderCmd}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+        <KeyBinding Key="E" Modifiers="Control"
+                    Command="{Binding EditOrderCmd}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+        <KeyBinding Key="D" Modifiers="Control"
+                    Command="{Binding DeleteOrderCmd}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+    </Window.InputBindings>
+
+
+    <!-- ВЕСЬ КОНТЕНТ ДОЛЖЕН БЫТЬ В DOCKPANEL -->
+    <DockPanel>
+
+        <!-- МЕНЮ ДОЛЖНО БЫТЬ СВЕРХУ -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл"/>
+
+            <MenuItem Header="Заказы">
+                <MenuItem Header="Создать заказ"
+                          Command="{Binding AddOrderCmd}"
+                          CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+                <MenuItem Header="Редактировать заказ"
+                          Command="{Binding EditOrderCmd}"
+                          CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+                <MenuItem Header="Удалить заказ"
+                          Command="{Binding DeleteOrderCmd}"
+                          CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+            </MenuItem>
+
+            <MenuItem Header="Продукты"/>
+            <MenuItem Header="Настройки"/>
+        </Menu>
+
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <Grid Margin="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Кнопки -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="Создать заказ"
+                        Command="{Binding AddOrderCmd}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+                <Button Content="Редактировать заказ"
+                        Command="{Binding EditOrderCmd}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+                <Button Content="Удалить заказ"
+                        Command="{Binding DeleteOrderCmd}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+            </StackPanel>
+
+            <!-- Фильтр -->
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10">
+                <TextBlock Text="Статус:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <ComboBox x:Name="StatusFilter" Width="150" SelectionChanged="StatusFilter_SelectionChanged">
+                    <ComboBoxItem Content="Все" IsSelected="True"/>
+                    <ComboBoxItem Content="Новый"/>
+                    <ComboBoxItem Content="В обработке"/>
+                    <ComboBoxItem Content="Выполнен"/>
+                </ComboBox>
+            </StackPanel>
+
+            <!-- Таблица -->
+            <DataGrid x:Name="OrdersGrid"
+                      Grid.Row="2"
+                      ItemsSource="{Binding Orders}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto"/>
+                    <DataGridTextColumn Header="Клиент" Binding="{Binding Client}" Width="*"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="Auto"/>
+                    <DataGridTextColumn Header="Сумма" Binding="{Binding Amount}" Width="Auto"/>
+                </DataGrid.Columns>
+
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Сделать 'Новый'" Click="SetStatusNew_Click"/>
+                        <MenuItem Header="Сделать 'В обработке'" Click="SetStatusProcessing_Click"/>
+                        <MenuItem Header="Сделать 'Выполнен'" Click="SetStatusDone_Click"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+
+            </DataGrid>
+
+        </Grid>
+
+    </DockPanel>
+
+</Window>
